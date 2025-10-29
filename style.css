@@ -1,0 +1,232 @@
+/* Corps et thème Matrix */
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background-color: black;
+  color: #00ff00;
+  overflow-x: hidden;
+  transition: opacity 1s ease-in-out;
+}
+body.fade { opacity: 0; }
+body.fade.loaded { opacity: 1; }
+
+/* Texte défilant */
+#typing-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #00ff00;
+  opacity: 0.15;
+  font-size: 18px;
+  white-space: pre;
+  pointer-events: none;
+  padding: 20px;
+  animation: scrollText 20s linear infinite;
+}
+@keyframes scrollText {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #00ff00;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+.navbar ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+.navbar a {
+  font-size: 1.3em;
+  color: #00ff00;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.navbar a:hover,
+.navbar a.active {
+  color: #0aff0a;
+  text-shadow: 0 0 10px #0f0;
+}
+
+/* CONTENU */
+.content {
+  text-align: center;
+  padding: 180px 20px 120px;
+  position: relative;
+  z-index: 1;
+}
+#typewriter {
+  font-size: 3em;
+  text-shadow: 0 0 20px #00ff00;
+  display: inline-block;
+  border-right: 2px solid #00ff00;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: blink 0.8s infinite;
+}
+@keyframes blink {
+  0%, 50% { border-color: #00ff00; }
+  51%, 100% { border-color: transparent; }
+}
+.content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 30px auto 0;
+  text-shadow: 0 0 8px #00ff00;
+}
+
+/* FOOTER */
+footer {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #00ff00;
+  z-index: 10;
+}
+footer a {
+  color: #00ff00;
+  text-decoration: none;
+}
+footer a:hover {
+  text-shadow: 0 0 8px #0f0;
+}
+
+/* ---- Page Parcours ---- */
+.parcours-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #00ff66;
+  max-width: 700px;
+  margin: 10vh auto;
+  padding: 2rem 3rem;
+  border: 2px solid #00ff66;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00ff66;
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+.parcours-box h1 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #00ff66;
+}
+
+.parcours-box ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.parcours-box li {
+  font-size: 1.1rem;
+  margin: 0.6rem 0;
+  text-shadow: 0 0 5px #00ff66;
+}
+
+.cv-link {
+  display: inline-block;
+  color: #00ff66;
+  border: 1px solid #00ff66;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cv-link:hover {
+  background-color: #00ff66;
+  color: black;
+  text-shadow: none;
+}
+
+/* Animation d’apparition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.parcours-box li strong {
+  display: block;
+  margin-bottom: 6px; /* espace entre le titre en gras et la ligne suivante */
+}
+
+/* ===== Page Projets ===== */
+.projects-container {
+  max-width: 1000px;
+  margin: 14vh auto 120px;
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.projects-container h1 {
+  font-size: 2.5em;
+  color: #0aff0a;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px #00ff00;
+}
+
+.project-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #00ff66;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00ff66;
+  color: #00ff66;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 750px;
+  text-align: left;
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.project-card h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+  text-shadow: 0 0 10px #00ff66;
+}
+
+.project-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  display: inline-block;
+  color: #00ff66;
+  border: 1px solid #00ff66;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.project-link:hover {
+  background-color: #00ff66;
+  color: black;
+  text-shadow: none;
+}
+
+
