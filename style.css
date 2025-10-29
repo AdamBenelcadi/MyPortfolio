@@ -41,6 +41,7 @@ body.fade.loaded { opacity: 1; }
   text-align: center;
   z-index: 10;
 }
+
 .navbar ul {
   list-style: none;
   display: inline-flex;
@@ -48,16 +49,30 @@ body.fade.loaded { opacity: 1; }
   margin: 0;
   padding: 0;
 }
+
 .navbar a {
   font-size: 1.3em;
   color: #00ff00;
   text-decoration: none;
   transition: 0.3s;
 }
+
 .navbar a:hover,
 .navbar a.active {
   color: #0aff0a;
   text-shadow: 0 0 10px #0f0;
+}
+
+/* Bouton menu mobile */
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  color: #00ff00;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  z-index: 11;
 }
 
 /* CONTENU */
@@ -163,7 +178,7 @@ footer a:hover {
 
 .parcours-box li strong {
   display: block;
-  margin-bottom: 6px; /* espace entre le titre en gras et la ligne suivante */
+  margin-bottom: 6px;
 }
 
 /* ===== Page Projets ===== */
@@ -229,4 +244,80 @@ footer a:hover {
   text-shadow: none;
 }
 
+/* ====== DESIGN RESPONSIVE ====== */
 
+/* Petits écrans (tablettes et téléphones) */
+@media screen and (max-width: 1024px) {
+  .navbar ul {
+    gap: 20px;
+  }
+  .content p,
+  .projects-container p,
+  .parcours-box li {
+    font-size: 1rem;
+  }
+  #typewriter {
+    font-size: 2em;
+  }
+}
+
+/* Écrans moyens (≤ 768px) */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 20px 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    display: none;
+  }
+
+  .navbar.active ul {
+    display: flex;
+  }
+
+  .content {
+    padding: 140px 15px 100px;
+  }
+
+  .projects-container,
+  .parcours-box {
+    width: 90%;
+    margin: 12vh auto 100px;
+    padding: 1.5rem;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+/* Très petits écrans (≤ 480px) */
+@media screen and (max-width: 480px) {
+  #typewriter {
+    font-size: 1.6em;
+  }
+  .navbar a {
+    font-size: 1.1em;
+  }
+  .project-card,
+  .parcours-box {
+    padding: 1rem;
+  }
+  .content p {
+    font-size: 0.95rem;
+  }
+  footer {
+    position: relative;
+    bottom: 0;
+    margin-top: 20px;
+  }
+}
