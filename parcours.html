@@ -46,6 +46,17 @@
       07 55 78 39 57
     </p>
   </footer>
+
+
+  <script>
+    // Redirection vers index.html quand la page est rechargée
+    window.addEventListener("load", () => {
+      // Vérifie si c'est un rafraîchissement
+      if (performance.getEntriesByType("navigation")[0].type === "reload") {
+        window.location.href = "index.html";
+      }
+    });
+  </script>
 </body>
 </html>
 
