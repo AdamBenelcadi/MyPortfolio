@@ -12,28 +12,30 @@
   <div id="typing-background"></div>
 
   <!-- Navigation -->
-<nav class="navbar" id="navbar">
-  <div class="menu-toggle" id="menu-toggle">☰</div>
-  <ul>
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="parcours.html">Parcours</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
-    <li><a href="projets.html">Projets</a></li>
-    <li><a href="experiences.html">Expériences</a></li>
-  </ul>
-</nav>
-
-
+  <nav class="navbar" id="navbar">
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="parcours.html">Parcours</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="experiences.html">Expériences</a></li>
+    </ul>
+  </nav>
 
   <!-- Section principale -->
   <section class="parcours-box">
     <h1>Expériences</h1>
     <ul>
       <li>
-<li>
-  <strong>2024/2025 — Stage d'observation au Subul Assalam Center for the Arabic Language - Fès, Maroc</strong><br>
-  Découverte et initiation au développement web aux côtés de l’informaticien du centre.
-</li>
+        <strong>2024/2025 — Stage d'observation au Subul Assalam Center for the Arabic Language - Fès, Maroc</strong><br>
+        Découverte et initiation au développement web aux côtés de l’informaticien du centre.
+      </li>
+      <li>
+        <strong>2025 — Mission d’intérim prêt-à-porter chez Primark O’Parinor, France</strong><br>
+        Accueil et conseil des clients, réassortiment des rayons, gestion des stocks et caisse. 
+        Développement de compétences en relation client et organisation d’équipe.
+      </li>
     </ul>
   </section>
 
@@ -46,6 +48,14 @@
       07 55 78 39 57
     </p>
   </footer>
+
+  <script>
+    // Redirection vers index.html quand la page est rechargée
+    window.addEventListener("load", () => {
+      if (performance.getEntriesByType("navigation")[0].type === "reload") {
+        window.location.href = "index.html";
+      }
+    });
+  </script>
 </body>
 </html>
-
