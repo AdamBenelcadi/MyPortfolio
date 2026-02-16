@@ -24,16 +24,21 @@
 </nav>
 
 
-<div>
+<div class="certifications-container">
   <div>
-    <h2>
-      CS50x | HARVARD UNIVERSITY - INTRODUCTION À L'INFORMATIQUE ET À L'ART DE PROGRAMMATION
-    </h2>
+    <img src="images/harvard.jpeg" alt="Certificat Harvard">
+    <h2>CS50x | HARVARD UNIVERSITY</h2>
   </div>
   <div>
-    <img>
+    <img src="images/bootcamp.jpg" alt="Certificat Bootcamp">
+    <h2>Bootcamp Web Development</h2>
+  </div>
+  <div class="cert3">
+    <img src="images/nasa.jpeg" alt="Certificat NASA">
+    <h2>NASA Space Apps Challenge</h2>
   </div>
 </div>
+
 
   <!-- Footer -->
   <footer>
@@ -44,5 +49,16 @@
       07 55 78 39 57
     </p>
   </footer>
+
+
+  <script>
+    // Redirection vers index.html quand la page est rechargée
+    window.addEventListener("load", () => {
+      // Vérifie si c'est un rafraîchissement
+      if (performance.getEntriesByType("navigation")[0].type === "reload") {
+        window.location.href = "index.html";
+      }
+    });
+  </script>
 </body>
 </html>
