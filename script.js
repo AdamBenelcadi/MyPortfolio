@@ -10,11 +10,11 @@ function toggleMenu() {
 // --- FOND MATRIX ---
 const background = document.getElementById("typing-background");
 const lines = [
-  "My name is Adam Benelcadi",
-  "Welcome to my Matrix",
-  "I love coding in JavaScript, Python, and C",
-  "Learning algorithms and problem-solving",
-  "Building projects to learn more every day"
+  "010101110011010101001110101010111001010101010111001010101010101011001010101011010101010101001101010101011010101010101001010101101010101010101011010101011010101010101",
+  "010101110011010101001110101010111001010101010111001010101010101011001010101011010101010101001101010101011010101010101001010101101010101010101011010101011010101010101",
+  "010101110011010101001110101010111001010101010111001010101010101011001010101011010101010101001101010101011010101010101001010101101010101010101011010101011010101010101",
+  "010101110011010101001110101010111001010101010111001010101010101011001010101011010101010101001101010101011010101010101001010101101010101010101011010101011010101010101",
+  "010101110011010101001110101010111001010101010111001010101010101011001010101011010101010101001101010101011010101010101001010101101010101010101011010101011010101010101"
 ];
 let content = "";
 for (let i = 0; i < 100; i++) {
@@ -55,5 +55,36 @@ const navbar = document.getElementById("navbar");
 
 menuToggle.addEventListener("click", () => {
   navbar.classList.toggle("active");
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // --- ANIMATION DES CERTIFICATIONS EXISTANTES ---
+  const certificates = document.querySelectorAll(".certifications-container > div");
+
+  const observerCertificates = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  certificates.forEach(cert => observerCertificates.observe(cert));
+
+  // --- ANIMATION DES PROJETS ---
+  const projects = document.querySelectorAll(".project-card");
+
+  const observerProjects = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  projects.forEach(project => observerProjects.observe(project));
 });
 
